@@ -2,20 +2,6 @@
     .name = .zig_compile_commands,
     .fingerprint = 0xa55d894ff9399839,
     .version = "1.0.3",
-
-    .dependencies = .{
-        .SDL = .{
-            .url = "git+https://github.com/castholm/SDL.git#fb2d799c4778832a34ccb3739e40dded700684bd",
-            .hash = "sdl-0.5.3+3.4.14-SDL--v4eqAGuIKFsspMVxBxZf1OIEmmH-yHDdEl9ZRdX",
-            .lazy = true,
-        },
-        .raylib = .{
-            .url = "git+https://github.com/raysan5/raylib#6.0",
-            .hash = "raylib-6.0.0-whq8uCSwLgWWeF3ec3dbG6Rr36SLFL-s2WJ1Q_2E22Bb",
-            .lazy = true,
-        },
-    },
-
     .minimum_zig_version = "0.17.0",
     .paths = .{
         "build.zig",
