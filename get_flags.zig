@@ -618,12 +618,12 @@ fn generateCompileCommandEntriesOrGatherDependencies(
         }
     }
 
-    if (step.link_function_sections) {
-        try output.appendFlag("-ffunction-sections");
-    }
-    if (step.link_data_sections) {
-        try output.appendFlag("-fdata-sections");
-    }
+    // if (step.link_function_sections) {
+    //     try output.appendFlag("-ffunction-sections");
+    // }
+    // if (step.link_data_sections) {
+    //     try output.appendFlag("-fdata-sections");
+    // }
     if (step.force_load_objc) {
         try output.appendFlag("-ObjC");
     }
