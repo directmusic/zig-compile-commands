@@ -68,7 +68,7 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .ez80,
             .hppa,
             .hppa64,
-            .kalimba,
+            .z80,
             .kvx,
             .m88k,
             .microblaze,
@@ -153,13 +153,10 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .ps5,
             => "scei",
             .amdhsa,
-            .amdpal,
             => "amd",
             .cuda,
             .nvcl,
             => "nvidia",
-            .mesa3d,
-            => "mesa",
             else => "unknown",
         });
         try llvm_triple.append('-');
@@ -181,9 +178,6 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .ps3 => "lv2",
             .ps4 => "ps4",
             .ps5 => "ps5",
-            .mesa3d => "mesa3d",
-            .amdpal => "amdpal",
-            .hermit => "hermit",
             .hurd => "hurd",
             .wasi => "wasi",
             .emscripten => "emscripten",
@@ -198,7 +192,6 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .managarm => "managarm",
 
             .@"3ds",
-            .contiki,
             .freestanding,
             .opencl, // https://llvm.org/docs/SPIRVUsage.html#target-triples
             .opengl,
@@ -341,7 +334,7 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .wasm64 => "wasm64",
             .ve => "ve",
 
-            .kalimba,
+            .z80,
             .or1k,
             .propeller,
             => error.LlvmUnsupportedArch,
@@ -423,8 +416,6 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .cuda,
             .nvcl,
             => "nvidia",
-            .mesa3d,
-            => "mesa",
             else => "unknown",
         });
         try llvm_triple.append('-');
@@ -450,8 +441,6 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
             .opencl => "unknown", // https://llvm.org/docs/SPIRVUsage.html#target-triples
             .ps4 => "ps4",
             .ps5 => "ps5",
-            .mesa3d => "mesa3d",
-            .amdpal => "amdpal",
             .hermit => "hermit",
             .hurd => "hurd",
             .wasi => "wasi",
@@ -467,7 +456,6 @@ pub fn llvmTriple(target: *const std.Target, allocator: std.mem.Allocator) ![]co
 
             .opengl,
             .plan9,
-            .contiki,
             .other,
             => "unknown",
         };
